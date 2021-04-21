@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <!-- Form view for the Birthday Reminder model -->
+        <record id="view_hr_birthday_reminder_form" model="ir.ui.view">
+            <field name="name">Birthday Reminder</field>
+            <field name="model">hr.birthday.reminder</field>
+            <field name="arch" type="xml">
+                <form string="Birthday Reminder">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="days_before_birthday"/>
+                            </group>
+                            <field name="recepients_ids">
+                                <tree string="Recepients">
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Tree/List view for the Birthday Reminder model -->
+        <record id="view_hr_birthday_reminder_tree" model="ir.ui.view">
+            <field name="name">Birthday Reminders</field>
+            <field name="model">hr.birthday.reminder</field>
+            <field name="arch" type="xml">
+                <tree string="Birthday Reminders">
+                    <field name="name"/>
+                    <field name="days_before_birthday"/>
+                    <field name="recepients_ids"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

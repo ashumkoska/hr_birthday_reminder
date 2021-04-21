@@ -1,0 +1,18 @@
+<odoo>
+    <!-- The template for the reminder email -->
+    <template id="hr_birthday_reminder_email">
+        <t t-call="web.basic_layout">
+            <div>
+                Hello,
+                <p>
+                    Please be reminded that&amp;nbsp;<t t-esc="employee.name"/>'s birthday is on&amp;nbsp;
+                    <t t-esc="employee.birthday"/>.
+                </p>
+                <p>
+                    Don't forget to wish them Happy Birthday!
+                </p>
+                Kind Regards.
+            </div>
+        </t>
+    </template>
+</odoo>

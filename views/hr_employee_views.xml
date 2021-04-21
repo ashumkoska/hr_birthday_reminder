@@ -1,0 +1,26 @@
+<odoo>
+    <data>
+        <!-- Extending the Employee form view in order to add configuration for the Birthday Reminders -->
+        <record id="view_hr_employee_birthday_reminder_form" model="ir.ui.view">
+            <field name="name">Employee Form (Birthday Reminder Extension)</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='hr_settings']" position="after">
+                    <page name="birthday_reminder" string="Birthday Reminder"
+                          attrs="{'invisible': [('birthday', '=', False)]}">
+                        <group name="birthday_cfg">
+                            <group name="birthday_reminder_dates">
+                                <field name="birthday_reminder"/>
+                            </group>
+                            <group name="birthday_reminder_dates">
+                                <field name="next_birthday_date"/>
+                                <field name="birthday_remind_date"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
